@@ -1,0 +1,156 @@
+def meet1():
+    print("\n=== Meet 1: Operasi Perbandingan ===")
+    a = 24
+    b = 68
+
+    print("# Hasil < :", a < b)
+    print("# Hasil > :", a > b)
+    print("# Hasil >= :", a >= b)
+    print("# Hasil <= :", a <= b)
+    print("# Hasil != :", a != b)
+
+    if not a != b:
+        print("Nilai a sama dengan nilai b")
+    else:
+        print("Nilai a tidak sama dengan nilai b")
+
+def meet2():
+    print("\n=== Meet 2: Logika Boolean ===")
+    x = True
+    z = not x
+    print("Nilai dari z =", z)
+
+    print("\n********** AND ***********")
+    for x, y in [(True, True), (True, False), (False, True), (False, False)]:
+        z = x and y
+        print(x, 'and', y, '=', z)
+
+def meet3_4():
+    print("\n=== Meet 3: Luas Segitiga ===")
+    try:
+        alas = int(input("Masukkan alas segitiga: "))
+        tinggi = int(input("Masukkan tinggi segitiga: "))
+    except ValueError:
+        print("Input harus berupa angka!")
+        return
+
+    if alas > 0 and tinggi > 0:
+        luas = 0.5 * alas * tinggi
+        print(f"\nLuas segitiga adalah: {luas:.2f}\n")
+        print("Gambar segitiga:")
+        for i in range(1, tinggi + 1):
+            print(' ' * (tinggi - i) + '*' * (2 * i - 1))
+    else:
+        print("Alas dan tinggi harus lebih dari 0!")
+
+    print("\n=== Meet 4: Kalkulator Sederhana ===")
+    operasi = input("Masukkan operasi (+, -, *, /): ")
+    try:
+        angka1 = float(input("Masukkan angka pertama: "))
+        angka2 = float(input("Masukkan angka kedua: "))
+    except ValueError:
+        print("Input harus berupa angka!")
+        return
+
+    if operasi == "+":
+        hasil = angka1 + angka2
+    elif operasi == "-":
+        hasil = angka1 - angka2
+    elif operasi == "*":
+        hasil = angka1 * angka2
+    elif operasi == "/":
+        if angka2 != 0:
+            hasil = angka1 / angka2
+        else:
+            print("Error: Pembagian dengan nol tidak diperbolehkan.")
+            return
+    else:
+        print("Operasi tidak valid.")
+        return
+
+    print("Hasil:", hasil)
+
+def meet5():
+    print("\n=== Meet 5: Pengecekan Hak Akses ===")
+    hak_akses = input("Masukkan hak akses Anda: ").lower()
+    print("Full akses" if hak_akses == "admin" else "Akses denied")
+
+def meet6():
+    print("\n=== Meet 6: Pengecekan Password ===")
+    password = input("Masukkan password: ")
+    if len(password) < 8:
+        print("Karakter kurang")
+    else:
+        print("Karakter cukup")
+
+def meet7():
+    print("\n=== Meet 7: String dan Index ===")
+    number = "1234567890"
+    data_terakhir = number[-1]
+    data_pertama = number[0]
+    data_k3_sampai_k6 = number[2:6]
+
+    print("a. Data terakhir:", data_terakhir)
+    print("b. Data pertama:", data_pertama)
+    print("c. Data ke-3 sampai ke-6:", data_k3_sampai_k6)
+
+def meet8():
+    print("\n=== Meet 8: Split Domain ===")
+    domain = input("Masukkan nama domain anda: ")
+    if "." in domain:
+        nama, ekstensi = domain.split(".", 1)
+        print("Nama domain anda adalah =", nama)
+        print("Nama yang anda gunakan adalah =", ekstensi)
+    else:
+        print("Format domain tidak valid.")
+
+def meet9_10():
+    print("\n=== Meet 9-10: Fitur Tambahan ===")
+    print("Contoh program sederhana lain bisa ditambahkan di sini.")
+    print("Misalnya pengulangan, validasi, dsb.")
+    # Tambahkan program lanjutan sesuai materi jika diperlukan.
+
+# Menu Utama
+def main():
+    print("##### Kelompok  #####")
+    print("M Hafzan Wazani (24241168)")
+    print("afrizan hidayat (24241188)")
+    print("###################\n")
+
+    while True:
+        print("Daftar program:")
+        print("1. Meet1 (Operasi Perbandingan)")
+        print("2. Meet2 (Logika Boolean)")
+        print("3. Meet3-4 (Segitiga & Kalkulator)")
+        print("4. Meet5 (Hak Akses)")
+        print("5. Meet6 (Password Check)")
+        print("6. Meet7 (String Indexing)")
+        print("7. Meet8 (Split Domain)")
+        print("8. Meet9-10 (Fitur Tambahan)")
+        print("0. Keluar")
+
+        pilihan = input("Masukkan nomor program yang ingin dijalankan: ")
+        if pilihan == "1":
+            meet1()
+        elif pilihan == "2":
+            meet2()
+        elif pilihan == "3":
+            meet3_4()
+        elif pilihan == "4":
+            meet5()
+        elif pilihan == "5":
+            meet6()
+        elif pilihan == "6":
+            meet7()
+        elif pilihan == "7":
+            meet8()
+        elif pilihan == "8":
+            meet9_10()
+        elif pilihan == "0":
+            print("Terima kasih! Program selesai.")
+            break
+        else:
+            print("Pilihan tidak valid. Coba lagi.\n")
+
+# Jalankan program
+main()
